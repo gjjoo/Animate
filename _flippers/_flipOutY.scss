@@ -1,0 +1,23 @@
+$animate-flipOutY: true;
+@mixin flipOutY($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-flipOutY);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-flipOutY {
+    $animate-flipOutY: false !global;
+    @include keyframes(#{$aniNameSpace}-flipOutY) {
+      0% {
+        opacity: 1;
+        @include transform(perspective(400px) rotateY(0deg));
+      }
+      100% {
+        opacity: 0;
+        @include transform(perspective(400px) rotateY(90deg));
+      }
+    }
+  }
+}

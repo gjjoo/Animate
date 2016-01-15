@@ -1,0 +1,22 @@
+$animate-slideOutDown: true;
+@mixin slideOutDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-slideOutDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-slideOutDown {
+    $animate-slideOutDown: false !global;
+    @include keyframes(#{$aniNameSpace}-slideOutDown) {
+      0% {
+        @include transform(translateY(0));
+      }
+      100% {
+        opacity: 0;
+        @include transform(translateY(2000px));
+      }
+    }
+  }
+}

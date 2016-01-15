@@ -1,0 +1,23 @@
+$animate-fadeInLeft: true;
+@mixin fadeInLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-fadeInLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-fadeInLeft {
+    $animate-fadeInLeft: false !global;
+    @include keyframes(#{$aniNameSpace}-fadeInLeft) {
+      0% {
+        opacity: 0;
+        @include transform(translateX(-20px));
+      }
+      100% {
+        opacity: 1;
+        @include transform(translateX(0));
+      }
+    }
+  }
+}

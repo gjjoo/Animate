@@ -1,0 +1,26 @@
+$animate-bounceOutRight: true;
+@mixin bounceOutRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-bounceOutRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-bounceOutRight {
+    $animate-bounceOutRight: false !global;
+    @include keyframes(#{$aniNameSpace}-bounceOutRight) {
+      0% {
+        @include transform(translateX(0));
+      }
+      20% {
+        opacity: 1;
+        @include transform(translateX(-20px));
+      }
+      100% {
+        opacity: 0;
+        @include transform(translateX(2000px));
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$animate-bounceIn: true;
+@mixin bounceIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-bounceIn);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-bounceIn {
+    $animate-bounceIn: false !global;
+    @include keyframes(#{$aniNameSpace}-bounceIn) {
+      0% {
+        opacity: 0;
+        @include transform(scale(.3));
+      }
+      50% {
+        opacity: 1;
+        @include transform(scale(1.05));
+      }
+      70% {
+        @include transform(scale(.9));
+      }
+      100% {
+        @include transform(scale(1));
+      }
+    }
+  }
+}

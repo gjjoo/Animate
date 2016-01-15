@@ -1,0 +1,17 @@
+$animate-flash: true;
+@mixin flash($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-flash);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-flash {
+    $animate-flash: false !global;
+    @include keyframes(#{$aniNameSpace}-flash) {
+      0%, 50%, 100% {opacity: 1;}
+      25%, 75% {opacity: 0;}
+    }
+  }
+}

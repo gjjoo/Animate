@@ -1,0 +1,26 @@
+$animate-bounceOutDown: true;
+@mixin bounceOutDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-bounceOutDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-bounceOutDown {
+    $animate-bounceOutDown: false !global;
+    @include keyframes(#{$aniNameSpace}-bounceOutDown) {
+      0% {
+        @include transform(translateY(0));
+      }
+      20% {
+        opacity: 1;
+        @include transform(translateY(-20px));
+      }
+      100% {
+        opacity: 0;
+        @include transform(translateY(2000px));
+      }
+    }
+  }
+}

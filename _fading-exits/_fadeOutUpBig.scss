@@ -1,0 +1,23 @@
+$animate-fadeOutUpBig: true;
+@mixin fadeOutUpBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-fadeOutUpBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-fadeOutUpBig {
+    $animate-fadeOutUpBig: false !global;
+    @include keyframes(#{$aniNameSpace}-fadeOutUpBig) {
+      0% {
+        opacity: 1;
+        @include transform(translateY(0));
+      }
+      100% {
+        opacity: 0;
+        @include transform(translateY(-2000px));
+      }
+    }
+  }
+}

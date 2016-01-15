@@ -1,0 +1,22 @@
+$animate-slideOutRight: true;
+@mixin slideOutRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-slideOutRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-slideOutRight {
+    $animate-slideOutRight: false !global;
+    @include keyframes(#{$aniNameSpace}-slideOutRight) {
+      0% {
+        @include transform(translateX(0));
+      }
+      100% {
+        opacity: 0;
+        @include transform(translateX(2000px));
+      }
+    }
+  }
+}

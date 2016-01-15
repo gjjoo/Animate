@@ -1,0 +1,24 @@
+$animate-lightSpeedOut: true;
+@mixin lightSpeedOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-lightSpeedOut);
+  @include count($count);
+  @include function(ease-in);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-lightSpeedOut {
+    $animate-lightSpeedOut: false !global;
+    @include keyframes(#{$aniNameSpace}-lightSpeedOut) {
+      0% {
+        opacity: 1;
+        @include transform(translateX(0%) skewX(0deg));
+      }
+      100% {
+        opacity: 0;
+        @include transform(translateX(100%) skewX(-30deg));
+      }
+    }
+  }
+}

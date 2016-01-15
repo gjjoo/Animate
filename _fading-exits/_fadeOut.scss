@@ -1,0 +1,17 @@
+$animate-fadeOut: true;
+@mixin fadeOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-fadeOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-fadeOut {
+    $animate-fadeOut: false !global;
+    @include keyframes(#{$aniNameSpace}-fadeOut) {
+        0% {opacity: 1;}
+      100% {opacity: 0;}
+    }
+  }
+}

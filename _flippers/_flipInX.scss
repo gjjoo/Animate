@@ -1,0 +1,29 @@
+$animate-flipInX: true;
+@mixin flipInX($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-flipInX);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $animate-flipInX {
+    $animate-flipInX: false !global;
+    @include keyframes(#{$aniNameSpace}-flipInX) {
+      0% {
+        opacity: 0;
+        @include transform(perspective(400px) rotateX(90deg));
+      }
+      40% {
+        @include transform(perspective(400px) rotateX(-10deg));
+      }
+      70% {
+        @include transform(perspective(400px) rotateX(10deg));
+      }
+      100% {
+        opacity: 1;
+        @include transform(perspective(400px) rotateX(0deg));
+      }
+    }
+  }
+}

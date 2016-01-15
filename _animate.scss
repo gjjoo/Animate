@@ -1,0 +1,288 @@
+// INDEX OF ANIMATIONS
+// This is a port of Den Eden's Animate.css, converted for SASS.
+// Source: https://daneden.me/animate/
+//
+// @import this index into your project.
+// Comment out categories below to remove them from your project.
+// Or, @import specific partials (e.g. @import "_attention/_bounce.scss";
+//
+//-----------------------------------------------------------------------
+
+// Always required
+@import
+  "_properties";
+
+// Import the animations
+@import
+  "_attention-seekers/attention-seekers.scss",
+  "_bouncing-entrances/bouncing-entrances.scss",
+  "_bouncing-exits/bouncing-exits.scss",
+  "_fading-entrances/fading-entrances.scss",
+  "_fading-exits/fading-exits.scss",
+  "_flippers/flippers.scss",
+  "_lightspeed/lightspeed.scss",
+  "_rotating-entrances/rotating-entrances.scss",
+  "_rotating-exits/rotating-exits.scss",
+  "_sliding-entrances/sliding-entrances.scss",
+  "_sliding-exits/sliding-exits.scss",
+  "_specials/specials.scss",
+  "_zooming-entrances/zooming-entrances.scss",
+  "_zooming-exits/zooming-exits.scss";
+
+// $aniNameSpace: 'ani';
+$aniIncludeClasses: false;
+
+// attention-seekers
+@if $aniIncludeClasses {
+  .#{$aniNameSpace}-bounce {
+    @include bounce();
+  }
+  .#{$aniNameSpace}-flash {
+    @include flash();
+  }
+  .#{$aniNameSpace}-jello {
+    @include jello();
+  }
+  .#{$aniNameSpace}-pulse {
+    @include pulse();
+  }
+  .#{$aniNameSpace}-rubberBand {
+    @include rubberBand();
+  }
+  .#{$aniNameSpace}-shake {
+    @include shake();
+  }
+  .#{$aniNameSpace}-swing {
+    @include swing();
+  }
+  .#{$aniNameSpace}-tada {
+    @include tada();
+  }
+  .#{$aniNameSpace}-wobble {
+    @include wobble();
+  }
+
+  // bouncing-entrances
+  .#{$aniNameSpace}-bounceIn {
+    @include bounceIn();
+  }
+  .#{$aniNameSpace}-bounceInDown {
+    @include bounceInDown();
+  }
+  .#{$aniNameSpace}-bounceInLeft {
+    @include bounceInLeft();
+  }
+  .#{$aniNameSpace}-bounceInRight {
+    @include bounceInRight();
+  }
+  .#{$aniNameSpace}-bounceInUp {
+    @include bounceInUp();
+  }
+
+  // bouncing-exits
+  .#{$aniNameSpace}-bounceOut {
+    @include bounceOut();
+  }
+  .#{$aniNameSpace}-bounceOutDown {
+    @include bounceOutDown();
+  }
+  .#{$aniNameSpace}-bounceOutLeft {
+    @include bounceOutLeft();
+  }
+  .#{$aniNameSpace}-bounceOutRight {
+    @include bounceOutRight();
+  }
+  .#{$aniNameSpace}-bounceOutUp {
+    @include bounceOutUp();
+  }
+
+  // fading-entrances
+  .#{$aniNameSpace}-fadeIn {
+    @include fadeIn();
+  }
+  .#{$aniNameSpace}-fadeInDown {
+    @include fadeInDown();
+  }
+  .#{$aniNameSpace}-fadeInDownBig {
+    @include fadeInDownBig();
+  }
+  .#{$aniNameSpace}-fadeInLeft {
+    @include fadeInLeft();
+  }
+  .#{$aniNameSpace}-fadeInLeftBig {
+    @include fadeInLeftBig();
+  }
+  .#{$aniNameSpace}-fadeInRight {
+    @include fadeInRight();
+  }
+  .#{$aniNameSpace}-fadeInRightBig {
+    @include fadeInRightBig();
+  }
+  .#{$aniNameSpace}-fadeInUp {
+    @include fadeInUp();
+  }
+  .#{$aniNameSpace}-fadeInUpBig {
+    @include fadeInUpBig();
+  }
+
+  // fading-exits
+  .#{$aniNameSpace}-fadeOut {
+    @include fadeOut();
+  }
+  .#{$aniNameSpace}-fadeOutDown {
+    @include fadeOutDown();
+  }
+  .#{$aniNameSpace}-fadeOutDownBig {
+    @include fadeOutDownBig();
+  }
+  .#{$aniNameSpace}-fadeOutLeft {
+    @include fadeOutLeft();
+  }
+  .#{$aniNameSpace}-fadeOutLeftBig {
+    @include fadeOutLeftBig();
+  }
+  .#{$aniNameSpace}-fadeOutRight {
+    @include fadeOutRight();
+  }
+  .#{$aniNameSpace}-fadeOutRightBig {
+    @include fadeOutRightBig();
+  }
+  .#{$aniNameSpace}-fadeOutUp {
+    @include fadeOutUp();
+  }
+  .#{$aniNameSpace}-fadeOutUpBig {
+    @include fadeOutUpBig();
+  }
+
+  // flippers
+  .#{$aniNameSpace}-flip {
+    @include flip();
+  }
+  .#{$aniNameSpace}-flipInX {
+    @include flipInX();
+  }
+  .#{$aniNameSpace}-flipInY {
+    @include flipInY();
+  }
+  .#{$aniNameSpace}-flipOutX {
+    @include flipOutX();
+  }
+  .#{$aniNameSpace}-flipOutY {
+    @include flipOutY();
+  }
+
+  // lightspeed
+  .#{$aniNameSpace}-lightSpeedIn {
+    @include lightSpeedIn();
+  }
+  .#{$aniNameSpace}-lightSpeedOut {
+    @include lightSpeedOut();
+  }
+
+  // rotating-entrances
+  .#{$aniNameSpace}-rotateIn {
+    @include rotateIn();
+  }
+  .#{$aniNameSpace}-rotateInDownLeft {
+    @include rotateInDownLeft();
+  }
+  .#{$aniNameSpace}-rotateInDownRight {
+    @include rotateInDownRight();
+  }
+  .#{$aniNameSpace}-rotateInUpLeft {
+    @include rotateInUpLeft();
+  }
+  .#{$aniNameSpace}-rotateInUpRight {
+    @include rotateInUpRight();
+  }
+
+  // rotating-exits
+  .#{$aniNameSpace}-rotateOut {
+    @include rotateOut();
+  }
+  .#{$aniNameSpace}-rotateOutDownLeft {
+    @include rotateOutDownLeft();
+  }
+  .#{$aniNameSpace}-rotateOutDownRight {
+    @include rotateOutDownRight();
+  }
+  .#{$aniNameSpace}-rotateOutUpLeft {
+    @include rotateOutUpLeft();
+  }
+  .#{$aniNameSpace}-rotateOutUpRight {
+    @include rotateOutUpRight();
+  }
+
+  // sliding-entrances
+  .#{$aniNameSpace}-slideInDown {
+    @include slideInDown();
+  }
+  .#{$aniNameSpace}-slideInLeft {
+    @include slideInLeft();
+  }
+  .#{$aniNameSpace}-slideInRight {
+    @include slideInRight();
+  }
+  .#{$aniNameSpace}-slideInUp {
+    @include slideInUp();
+  }
+
+  // sliding-exits
+  .#{$aniNameSpace}-slideOutDown {
+    @include slideOutDown();
+  }
+  .#{$aniNameSpace}-slideOutLeft {
+    @include slideOutLeft();
+  }
+  .#{$aniNameSpace}-slideOutRight {
+    @include slideOutRight();
+  }
+  .#{$aniNameSpace}-slideOutUp {
+    @include slideOutUp();
+  }
+
+  // specials
+  .#{$aniNameSpace}-hinge {
+    @include hinge();
+  }
+  .#{$aniNameSpace}-rollIn {
+    @include rollIn();
+  }
+  .#{$aniNameSpace}-rollOut {
+    @include rollOut();
+  }
+
+  // zooming-entrances
+  .#{$aniNameSpace}-zoomIn {
+    @include zoomIn();
+  }
+  .#{$aniNameSpace}-zoomInDown {
+    @include zoomInDown();
+  }
+  .#{$aniNameSpace}-zoomInLeft {
+    @include zoomInLeft();
+  }
+  .#{$aniNameSpace}-zoomInRight {
+    @include zoomInRight();
+  }
+  .#{$aniNameSpace}-zoomInUp {
+    @include zoomInUp();
+  }
+
+  // zooming-exits
+  .#{$aniNameSpace}-zoomOut {
+    @include zoomOut();
+  }
+  .#{$aniNameSpace}-zoomOutDown {
+    @include zoomOutDown();
+  }
+  .#{$aniNameSpace}-zoomOutLeft {
+    @include zoomOutLeft();
+  }
+  .#{$aniNameSpace}-zoomOutRight {
+    @include zoomOutRight();
+  }
+  .#{$aniNameSpace}-zoomOutUp {
+    @include zoomOutUp();
+  }
+}

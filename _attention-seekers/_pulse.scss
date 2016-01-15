@@ -1,0 +1,19 @@
+// hover의 pulse와 똑같은 믹스인으로 인해 명칭 변경
+$aninate-pulse: true;
+@mixin pulse($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(#{$aniNameSpace}-pulse);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+  @if $aninate-pulse {
+    $aninate-pulse: false !global;
+    @include keyframes(#{$aniNameSpace}-pulse) {
+        0% {@include transform(scale(1));}
+       50% {@include transform(scale(1.1));}
+      100% {@include transform(scale(1));}
+    }
+  }
+}
